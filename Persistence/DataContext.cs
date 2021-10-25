@@ -10,6 +10,10 @@ namespace Persistence
     public class DataContext: DbContext
     {
         
+        public DbSet<Value> Values { get; set; }
+
+        public DbSet<Post> Posts { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Value>().HasData(
@@ -18,8 +22,6 @@ namespace Persistence
                 new Value { Id = 3, Name = "Value3" }
             );
         }
-        
-        public DbSet<Value> Values { get; set; }
 
         public DataContext(DbContextOptions options) : base(options)
         {

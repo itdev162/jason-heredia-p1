@@ -23,7 +23,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          BlogBox
+          My Blog
         </header>
           {this.state.values.map((value: any) => <div key={value}>{value}</div>)}
       </div>
